@@ -6,8 +6,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* basename must match vite.config.ts `base` for GitHub Pages project sites */}
-    <BrowserRouter basename="/soundledger-landing-page">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>

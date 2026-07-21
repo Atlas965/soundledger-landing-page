@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Official corporate landing page for SoundLedger Technologies Inc.",
-  "homepage": "https://Atlas965.github.io/soundledger-landing-page",
+  "homepage": "https://soundledger.ca",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && node scripts/copy-404.cjs",
