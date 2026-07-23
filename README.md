@@ -14,6 +14,7 @@ This site positions SoundLedger as the corporate technology brand, while directi
 - **Framer Motion** for subtle, professional animation
 - **React Router** for the legal pages (Privacy Policy, Terms of Service)
 - **lucide-react** for iconography
+- **gh-pages** for GitHub Pages deployment
 
 ## Getting Started
 
@@ -47,6 +48,56 @@ Lint the project:
 npm run lint
 ```
 
+## Deploy to GitHub Pages
+
+This project is configured for GitHub Pages via the `gh-pages` package.
+
+### One-command deploy
+
+```bash
+npm run deploy
+```
+
+This will:
+
+1. Build the production site into `dist/`
+2. Create a SPA `404.html` fallback (so Privacy / Terms routes work on refresh)
+3. Push `dist/` to the `gh-pages` branch
+
+### First-time GitHub Pages setup
+
+1. Run `npm run deploy`
+2. Open the repo on GitHub → **Settings → Pages**
+3. Set **Source** to **Deploy from a branch**
+4. Choose branch **`gh-pages`** / folder **`/` (root)**
+5. Save
+
+Site URL (project pages):
+
+```
+https://Atlas965.github.io/soundledger-landing-page/
+```
+
+### Custom domain: SoundLedger.ca
+
+`public/CNAME` already contains:
+
+```
+SoundLedger.ca
+```
+
+Then:
+
+1. GitHub → **Settings → Pages → Custom domain** → enter `SoundLedger.ca`
+2. At your DNS provider, add the records GitHub shows (typically A records for apex + CNAME for `www`)
+3. Enable **Enforce HTTPS** once DNS is verified
+
+**Important:** when the custom domain is fully live, change Vite `base` to `"/"` in `vite.config.ts` and remove the `basename` prop from `BrowserRouter` in `src/main.tsx`, then redeploy. Until then, keep the current `/soundledger-landing-page/` base so assets resolve on `*.github.io`.
+
+### Note on private repositories
+
+GitHub Pages on **private** repos requires a paid GitHub plan. For free hosting, make the repository **public**, or upgrade the account/org.
+
 ## Project Structure
 
 ```
@@ -55,14 +106,15 @@ src/
   components/          Shared UI: Navbar, Footer, Container, Reveal, HeroVisual
   components/sections/ Landing page sections (Hero, About, Products, Why, Artist, Partners)
   pages/               Route-level pages (Landing, Privacy Policy, Terms of Service)
-public/                Static assets, favicon, robots.txt, sitemap.xml
+scripts/               Build helpers (GitHub Pages 404 copy)
+public/                Static assets, favicon, CNAME, robots.txt, sitemap.xml
 ```
 
 ## Content Sections
 
 1. **Hero** — Primary headline, CTA to SplitSheet, abstract collaboration-network visual.
 2. **About** — Company positioning and core problem pillars.
-3. **Product Ecosystem** — SplitSheet (flagship), SoundScape and SoundLedger Records (coming soon).
+3. **Product Ecosystem** — SplitSheet (flagship Rights-as-a-Service platform).
 4. **Why SoundLedger** — Problem vs. solution comparison.
 5. **SoundLedger Artist** — The creative/cultural arm of the brand.
 6. **Partners & Investors** — Credibility section targeting investors, labels, and technology partners.

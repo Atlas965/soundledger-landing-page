@@ -27,7 +27,7 @@ export default function Artist() {
                 </p>
 
                 <a
-                  href="https://open.spotify.com/artist/soundledger"
+                  href="https://open.spotify.com/artist/1wzGWIcNdAhwDRc1X2DPMb"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary mt-8"
