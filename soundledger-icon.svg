@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="soundledgerIconTitle soundledgerIconDesc">
+  <title id="soundledgerIconTitle">SoundLedger</title>
+  <desc id="soundledgerIconDesc">Circular gradient badge with a seven-bar soundwave mark</desc>
+
+  <defs>
+    <linearGradient id="soundledgerIconGradient" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox" color-interpolation="sRGB">
+      <stop offset="0%" stop-color="#63E4E4"/>
+      <stop offset="50%" stop-color="#2E9FD8"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="128" cy="128" r="118" fill="url(#soundledgerIconGradient)"/>
+
+  <g fill="#0B0B0B">
+    <rect x="42" y="104" width="16" height="48" rx="8"/>
+    <rect x="68" y="80" width="16" height="96" rx="8"/>
+    <rect x="94" y="62" width="16" height="132" rx="8"/>
+    <rect x="120" y="50" width="16" height="156" rx="8"/>
+    <rect x="146" y="62" width="16" height="132" rx="8"/>
+    <rect x="172" y="80" width="16" height="96" rx="8"/>
+    <rect x="198" y="104" width="16" height="48" rx="8"/>
+  </g>
+</svg>
